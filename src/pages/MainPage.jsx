@@ -1,3 +1,3 @@
 export default function MainPage() {
-  return <div>main </div>
+  return <div> 메인페이지 </div>
 }

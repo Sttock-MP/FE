@@ -1,3 +1,3 @@
 export default function Items() {
-  return <div></div>
+  return <div> items - 항목별 보기</div>
 }
