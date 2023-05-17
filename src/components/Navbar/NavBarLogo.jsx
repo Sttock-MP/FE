@@ -1,7 +1,7 @@
 const NavBarLogo = () => {
   return (
     <svg
-      className="block w-[154px] h-[42px] relative top-7 left-[243px]"
+      className="block w-[154px] h-[42px] absolute top-7 left-[243px]"
       width={154}
       height={42}
       viewBox="0 0 154 42"
