@@ -15,24 +15,24 @@ const NavBar = () => {
             <NavBarLogo />
           </Link>
         </div>
-        <div className="justify-between hidden md:flex items-center">
+        <div className="justify-between hidden md:flex  text-[#665a48] items-center font-['Noto_Sans KR'] leading-[normal] font-medium text-left text-sm">
           <Link
             to="/thisweek"
-            className="whitespace-pre-wrap absolute top-[49px] left-[489px] font-['Noto_Sans KR'] text-sm leading-[normal] font-medium text-left text-[#665a48]"
+            className="whitespace-pre-wrap absolute top-[49px] left-[489px] hover:text-[#9F8772] hover:font-bold"
           >
             이번 주 구매
           </Link>
 
           <Link
             to="/calender"
-            className="whitespace-pre-wrap absolute top-[49px] left-[610px] font-['Noto_Sans KR'] text-sm leading-[normal] font-medium text-left text-[#665a48]"
+            className="whitespace-pre-wrap absolute top-[49px] left-[610px] hover:text-[#9F8772] hover:font-bold "
           >
             스똑캘린더
           </Link>
 
           <Link
             to="/items"
-            className="whitespace-pre-wrap absolute top-[49px] left-[728px] font-['Noto_Sans KR'] text-sm leading-[normal] font-medium text-left text-[#665a48]"
+            className="whitespace-pre-wrap absolute top-[49px] left-[728px] hover:text-[#9F8772] hover:font-bold "
           >
             항목 별 보기
           </Link>
