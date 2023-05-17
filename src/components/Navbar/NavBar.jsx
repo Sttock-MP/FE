@@ -2,11 +2,18 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import NavBarLogo from './NavBarLogo'
 import MyPageIcon from './MyPageIcon'
-import AddItemICon from './AddItemIcon'
+import AddItemIcon from './AddItemIcon'
 import classNames from 'classnames'
+import AddItemModal from '../Modal/AddItemModal'
 
 const NavBar = () => {
   const [menuToggle, setMenuToggle] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const showModal = () => {
+    setModalOpen(true)
+  }
+
   return (
     <nav className="bg-b">
       <div className="h-20 top-0 left-0 mx-auto border-b border-[#e2ded8]">
@@ -40,9 +47,14 @@ const NavBar = () => {
         <Link to="mypage">
           <MyPageIcon />
         </Link>
-        <Link to="/items">
-          <AddItemICon />
-        </Link>
+
+        <div>
+          <button onClick={showModal}>
+            <AddItemIcon />
+          </button>
+          {modalOpen && <AddItemModal setModalOpen={setModalOpen} />}
+        </div>
+
         {/*모바일메뉴*/}
         <div className="md:hidden flex items-center ">
           <button onClick={() => setMenuToggle(!menuToggle)}>
