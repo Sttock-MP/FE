@@ -15,8 +15,8 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="w-[1440px] h-20 relative">
-      <div className="w-[1440px] h-20 absolute left-[-1px] top-[-1px] bg-white border border-[#e2ded8]">
+    <nav className="width-[100%] height-[100vh]  justify-content relative">
+      <div className="w-[100%] heigth-[100vh]  justify-content  h-20 absolute left-[-1px] top-[-1px] bg-white border border-[#e2ded8]">
         <div className="h-[42px] absolute left-[243px] top-7">
           <Link to="/">
             <img src={NavBarLogoImage} alt="로고" />
