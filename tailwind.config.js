@@ -5,10 +5,10 @@ export default {
     extend: {
       colors: {
         darkBrown: '#665A48',
-        Brown: '#9F8772',
-        Beige: '#EBE4D9',
-        Ivory: '#F6F4EF',
-        Grey: '#E2DED8',
+        brown: '#9F8772',
+        beige: '#EBE4D9',
+        ivory: '#F6F4EF',
+        gray: '#E2DED8',
       },
     },
     plugins: [],
