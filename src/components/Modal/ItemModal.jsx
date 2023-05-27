@@ -40,6 +40,12 @@ function ItemModal({ isOpen }) {
   }
   const onError = (errors, e) => console.log(errors, e)
   const [selectedCategory, setSelectedCategory] = useState(['상품을 선택해주세요.'])
+  //const [selectedSubCategory, setSelectedSubCategory] = useState(['상품명'])
+
+  // const handleProductName = (e) => {
+  //   set
+  //   SUB_CATEGORY_LIST.filter((item) => item.category === test).map((item) => item.name)
+  // }
   const handleDropCategory = (e) => {
     const { value } = e.target
     setSelectedCategory(CATEGORY_LIST.filter((el) => el.value === value)[0].value)
@@ -51,29 +57,34 @@ function ItemModal({ isOpen }) {
         className="fixed top-[15%] left-[17.5%] w-[900px] h-[560px] border border-brown bg-white  justify-between"
         isOpen={isOpen}
       >
-        <div className="w-[100px] h-[30px] absolute left-[574px] top-[489px] bg-[#f6f4ef] border border-[#ebe4d9]">
+        <div className="w-[100px] h-[30px] absolute left-[574px] top-[489px] bg-[#f6f4ef] border border-borderColor">
           <form onSubmit={handleSubmit(onSubmit, onError)}>
             {errors.productName && errors}
             <input
-              className="flex text-sm font-medium text-center m-auto p-1 text-[#665a48]"
+              className="flex text-sm font-medium text-center m-auto p-1 text-darkBrown"
               type="submit"
               value="추가완료"
             />
           </form>
         </div>
         <div className="w-[100px] h-[30px] absolute left-[724px] top-[489px] bg-[#f6f4ef] border border-[#ebe4d9]">
-          <p className="flex justify-center p-1 text-sm font-medium text-left text-[#665a48]">
+          <p className="flex justify-center p-1 text-sm font-medium text-left text-darkBrown">
             취소하기
           </p>
         </div>
 
-        <p className="absolute left-[151px] top-[106px] text-2xl font-bold text-left text-[#665a48]">
+        <p className="absolute left-[151px] top-[106px] text-2xl font-bold text-left text-darkBrown">
           상품추가하기
         </p>
 
-        <p className="absolute left-[227px] top-[226px] text-sm font-medium text-left text-[#665a48]">
+        <p className="absolute left-[227px] top-[226px] text-sm font-medium text-left text-darkBrown">
           상품별칭
         </p>
+
+        <p className="absolute left-[227px] top-[277px] text-sm font-medium text-left text-darkBrown">
+          상품이름
+        </p>
+
         <div>
           <input
             className="absolute bg-gray left-[365.5px] top-[226px]"
@@ -82,7 +93,7 @@ function ItemModal({ isOpen }) {
           {errors.exampleRequired && <span>This field is required</span>}
         </div>
         {/* 카테고리선택 */}
-        <p className="absolute left-[227px] top-[174px] text-sm font-medium text-left text-[#665a48]">
+        <p className="absolute left-[227px] top-[174px] text-sm font-medium text-left text-darkBrown">
           카테고리
         </p>
         <div>
@@ -90,7 +101,7 @@ function ItemModal({ isOpen }) {
             <img src={dropdownIcon} />
           </span>
           <select
-            className="w-[200px] text-sm font-medium text-left text-[#665a48] py-1 px-1 pr-8 h-7 absolute left-[365.5px] top-[171.5px] bg-white border border-[#ebe4d9] focus:outline-none focus:border-gray-500"
+            className="w-[200px] text-sm font-medium text-left text-[#665a48] py-1 px-1 pr-8 h-7 absolute left-[365.5px] top-[171.5px] bg-white border border-borderColor focus:outline-none focus:border-gray"
             onChange={handleDropCategory}
           >
             {CATEGORY_LIST.map((el) => {
@@ -99,22 +110,23 @@ function ItemModal({ isOpen }) {
           </select>
         </div>
         {/*구매일자 선택 */}
-        <p className="absolute left-[227px] top-[378px] text-sm font-medium text-left text-[#665a48]">
+        <p className="absolute left-[227px] top-[378px] text-sm font-medium text-left text-darkBrown">
           구매일
         </p>
-        <div className="w-[200px] h-7 absolute left-[365px] top-[375px] bg-white border border-[#ebe4d9]">
+        <div className="w-[200px] h-7 absolute left-[365px] top-[375px] bg-white border border-borderColor">
           <PurchaseDatePicker />
         </div>
         {/* 예상소진일자 노출*/}
-        <p className="absolute left-[227px] top-[428px] text-sm font-medium text-left text-[#665a48]">
+        <p className="absolute left-[227px] top-[428px] text-sm font-medium text-left text-darkBrown">
           예상소진일자
         </p>
         {/* 직접 입력 받는 창 노출 */}
-        <p className="absolute left-[593px] top-[429px] text-xs font-medium text-left text-[#665a48]">
+
+        <p className="absolute left-[593px] top-[429px] text-xs font-medium text-left text-darkBrown">
           직접입력
         </p>
 
-        <p className="absolute left-[227px] top-[328px] text-sm font-medium text-left text-[#665a48]">
+        <p className="absolute left-[227px] top-[328px] text-sm font-medium text-left text-darkBrown">
           계산기준
         </p>
 

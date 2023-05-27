@@ -18,7 +18,7 @@ export default function Mypage() {
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm({
     mode: 'onChange',

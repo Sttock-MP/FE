@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import MainPage from './pages/Mainpage'
+import MainPage from './pages/MainPage'
 import NotFound from './pages/NotFound'
 import ProtectedRoute from './pages/ProtectedRoute'
 import Calender from './pages/Calender'
@@ -11,6 +11,7 @@ import ThisWeek from './pages/ThisWeek'
 import Items from './pages/Items'
 import ItemsDetail from './pages/ItemsDetail'
 import MyPage from './pages/MyPage'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,19 +21,12 @@ const router = createBrowserRouter([
       { index: true, path: '/', element: <MainPage /> }, //마이페이지와 404 페이지 외 다른페이지 모두 ProtectedRoute 상태
       {
         path: '/calender',
-        element: (
-          <ProtectedRoute>
-            <Calender />
-          </ProtectedRoute>
-        ),
+        element: <Calender />,
       },
       {
         path: '/thisweek',
-        element: (
-          <ProtectedRoute>
-            <ThisWeek />
-          </ProtectedRoute>
-        ),
+
+        element: <ThisWeek />,
       },
       {
         path: '/items',
@@ -48,11 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/mypage',
-        element: (
-          <ProtectedRoute>
-            <MyPage />
-          </ProtectedRoute>
-        ),
+        element: <MyPage />,
       },
     ],
   },

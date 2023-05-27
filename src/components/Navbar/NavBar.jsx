@@ -15,50 +15,52 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="width-[100%] height-[100vh]  justify-content relative">
-      <div className="w-[100%] heigth-[100vh]  justify-content  h-20 absolute left-[-1px] top-[-1px] bg-white border border-[#e2ded8]">
-        <div className="h-[42px] absolute left-[243px] top-7">
-          <Link to="/">
-            <img src={NavBarLogoImage} alt="로고" />
+    <>
+      <nav className="w-[1440px] h-20 relative">
+        <div className=" w-[1440px] h-20 absolute justify-content left-[-1px] top-[-1px] bg-white border border-[#e2ded8]">
+          <div className="h-[42px] absolute left-[243px] top-7">
+            <Link to="/">
+              <img src={NavBarLogoImage} alt="로고" />
+            </Link>
+          </div>
+          <p className="justify-between hidden md:flex  text-[#665a48] items-center font-['Noto_Sans KR'] leading-[normal] font-medium text-left text-sm">
+            <Link
+              to="/thisweek"
+              className="whitespace-pre-wrap absolute top-[49px] left-[489px] hover:text-[#9F8772] hover:font-bold"
+            >
+              이번 주 구매
+            </Link>
+
+            <Link
+              to="/calender"
+              className="whitespace-pre-wrap absolute top-[49px] left-[610px] hover:text-[#9F8772] hover:font-bold "
+            >
+              스똑캘린더
+            </Link>
+
+            <Link
+              to="/items"
+              className="whitespace-pre-wrap absolute top-[49px] left-[728px] hover:text-[#9F8772] hover:font-bold "
+            >
+              항목 별 보기
+            </Link>
+          </p>
+          <div>
+            <button
+              onClick={handleClick}
+              className="absolute w-[23px] h-[23]px  left-[1138px] top-[49px]"
+            >
+              {/*클릭시 제품 추가 모달창 생성*/}
+              <ItemModal isOpen={isOpen} />
+              <img src={AddItemIcon} />
+            </button>
+          </div>
+          <Link to="/mypage" className="absolute w-[23px] h-[23]px  left-[1175px] top-[49px]">
+            <img src={MyPageIcon} />
           </Link>
         </div>
-        <p className="justify-between hidden md:flex  text-[#665a48] items-center font-['Noto_Sans KR'] leading-[normal] font-medium text-left text-sm">
-          <Link
-            to="/thisweek"
-            className="whitespace-pre-wrap absolute top-[49px] left-[489px] hover:text-[#9F8772] hover:font-bold"
-          >
-            이번 주 구매
-          </Link>
-
-          <Link
-            to="/calender"
-            className="whitespace-pre-wrap absolute top-[49px] left-[610px] hover:text-[#9F8772] hover:font-bold "
-          >
-            스똑캘린더
-          </Link>
-
-          <Link
-            to="/items"
-            className="whitespace-pre-wrap absolute top-[49px] left-[728px] hover:text-[#9F8772] hover:font-bold "
-          >
-            항목 별 보기
-          </Link>
-        </p>
-        <div>
-          <button
-            onClick={handleClick}
-            className="absolute w-[23px] h-[23]px  left-[1138px] top-[49px]"
-          >
-            {/*클릭시 제품 추가 모달창 생성*/}
-            <ItemModal isOpen={isOpen} />
-            <img src={AddItemIcon} />
-          </button>
-        </div>
-        <Link to="mypage" className="absolute w-[23px] h-[23]px  left-[1175px] top-[49px]">
-          <img src={MyPageIcon} />
-        </Link>
-      </div>
-    </nav>
+      </nav>
+    </>
   )
 }
 
