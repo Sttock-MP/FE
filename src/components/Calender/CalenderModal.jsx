@@ -17,7 +17,7 @@ export const CalenderModal = () => {
   }
   return (
     <>
-      <div className="calender">
+      <div className=" calender  w-[500px] h-[300px] rounded-lg border border-gray-300 bg-white shadow-md p-4 m-10 ">
         <RenderHeader currentMonth={currentMonth} prevMonth={prevMonth} nextMonth={nextMonth} />
         <RenderDays />
         <RenderCells

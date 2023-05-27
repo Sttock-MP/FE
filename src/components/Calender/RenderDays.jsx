@@ -4,12 +4,16 @@ const RenderDays = () => {
 
   for (let i = 0; i < 7; i++) {
     days.push(
-      <div className="col bg-gray text-center border p-2" key={i}>
+      <div
+        className="col text-gray-400 font-bold text-lg text-center flex-1
+      "
+        key={i}
+      >
         {date[i]}
       </div>
     )
   }
 
-  return <div className="days flex row bg-beige ">{days}</div>
+  return <div className="days flex">{days}</div>
 }
 export default RenderDays

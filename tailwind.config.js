@@ -9,6 +9,7 @@ export default {
         beige: '#EBE4D9',
         ivory: '#F6F4EF',
         gray: '#E2DED8',
+        borderColor: '#EbE4D9',
       },
     },
     plugins: [],
