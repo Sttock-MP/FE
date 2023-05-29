@@ -14,11 +14,6 @@ worker.start()
 //     worker.start()
 //   })()
 // }
-// ;(async () => {
-//   const { worker } = await import('./_msw/browser')
-//   console.log('worker : ', worker)
-//   worker.start()
-// })()
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
