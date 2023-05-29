@@ -27,17 +27,17 @@ const RenderCells = ({ currentMonth, selectedDate, handleDateClick }) => {
       const cloneDay = day
       days.push(
         <div
-          className={`col cell flex-1 text-center ${
+          className={`col cell grid grid-cols-[50px] grid-rows-[50px] text-center p-1 rounded-lg ${
             !isSameMonth(day, monthStart)
-              ? 'disabled'
+              ? 'disabled text-gray'
               : isSameDay(day, selectedDate)
               ? 'selected bg-blue-500 text-white'
               : format(currentMonth, 'M') === (day, 'M')
-              ? 'not-valid text-gray-400'
-              : 'valid'
+              ? 'not-valid text-gray'
+              : 'valid text-gray-700 hover:bg-gray-100'
           }`}
           key={day}
-          onClick={() => handleDateClick(parse(cloneDay))}
+          onClick={() => handleDateClick(parse(day, 'yyyy-MM-dd', new Date()))}
         >
           <div>
             <span
@@ -51,7 +51,7 @@ const RenderCells = ({ currentMonth, selectedDate, handleDateClick }) => {
       day = addDays(day, 1)
     }
     rows.push(
-      <div className="row flex" key={day}>
+      <div className="row flex " key={day}>
         {days}
       </div>
     )

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { SUB_CATEGORY_LIST } from '../../data/data'
 import useModal from '../../hooks/useModal'
 import { ProgressBar, SWITCH_ICON, Icon, makListByBuyList } from '../../pages/ThisWeek'
 import ModifyProductModal from './ModifyProductModal'
@@ -34,7 +33,7 @@ function ProductModal({ onClose, id }) {
     onClose()
   }
   if (!item) return
-  const { name, category, usedPercent, remain, regularCapacity, purchaseDate, usedDay } = item
+  const { name, category, usedPercent, remain, purchaseDate, usedDay } = item
   return (
     <>
       <div className="bg-[#00000090] fixed w-[100vw] h-[100vh] top-0" onClick={onClose} />

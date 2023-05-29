@@ -5,7 +5,7 @@ const RenderDays = () => {
   for (let i = 0; i < 7; i++) {
     days.push(
       <div
-        className="col text-gray-400 font-bold text-lg text-center flex-1
+        className="col text-center text-gray-400 font-bold text-lg  grid grid-cols-[60px] grid-rows-[50px] rounded-lg
       "
         key={i}
       >

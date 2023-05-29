@@ -15,15 +15,24 @@ export const CalenderModal = () => {
   const nextMonth = () => {
     setCurrentMonth(addMonths(currentMonth, 1))
   }
+
+  const handleDateClick = (day) => {
+    console.log(day)
+    setSelectedDate(parse(day, 'yyyy-MM-dd', new Date()))
+  }
+
   return (
     <>
-      <div className=" calender  w-[500px] h-[300px] rounded-lg border border-gray-300 bg-white shadow-md p-4 m-10 ">
+      <div className=" calender rounded-lg  border-gray-300 bg-white shadow-md p-4 mx-auto my-10 ">
         <RenderHeader currentMonth={currentMonth} prevMonth={prevMonth} nextMonth={nextMonth} />
+
         <RenderDays />
+
         <RenderCells
           currentMonth={currentMonth}
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
+          handleDateClick={handleDateClick}
         />
       </div>
     </>
