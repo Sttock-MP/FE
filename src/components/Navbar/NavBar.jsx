@@ -14,12 +14,10 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="w-[100vw] min-w-[1440px] h-20 flex justify-between items-center px-[20%] bg-white border border-[#e2ded8]">
-        {/* <div className=" w-[1440px] h-20 justify-content bg-white border border-[#e2ded8]"> */}
+      <nav className="w-[100vw] min-w-[1440px] h-20 flex justify-between items-center px-[100px] pl-[10%] bg-white border border-[#e2ded8]">
         <Left />
         <Middle />
         <Right handleClick={handleClick} />
-        {/* </div> */}
       </nav>
     </>
   )
@@ -27,7 +25,7 @@ const NavBar = () => {
 
 const Left = () => {
   return (
-    <div className="h-[42px]">
+    <div className="h-[50px] mr-[50px] ml-[30px]">
       <Link to="/">
         <img src={NavBarLogoImage} alt="로고" />
       </Link>
@@ -38,8 +36,8 @@ const Middle = () => {
   return (
     <div
       className={classNames(
-        'mt-5',
-        'flex gap-[50px] justify-start items-center',
+        'mt-4',
+        'flex gap-[100px] justify-start items-center',
         "text-[#665a48] font-['Noto_Sans KR'] leading-[normal] font-medium text-left text-sm min-w-[600px]"
       )}
     >
@@ -59,13 +57,13 @@ const Middle = () => {
 }
 const Right = ({ handleClick }) => {
   return (
-    <div className="flex gap-[10px] items-center">
-      <div className="mt-2">
-        <button onClick={handleClick} className="w-[23px] h-[23]px ">
+    <div className="flex gap-[8px] items-center">
+      <div className="mt-5">
+        <button onClick={handleClick} className="w-[23px] h-[23]px ml-10 ">
           <img src={AddItemIcon} />
         </button>
       </div>
-      <Link to="/mypage" className="w-[23px] h-[23]px  ">
+      <Link to="/mypage" className="w-[23px] h-[23]px ml-5 mt-3.5 ">
         <img src={MyPageIcon} />
       </Link>
     </div>
