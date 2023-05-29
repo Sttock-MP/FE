@@ -121,10 +121,13 @@ const DropDown = ({ list, onClick }) => {
     </ul>
   )
 }
+
 const ItemList = ({ list }) => {
+  const filteredList = list.filter((item) => item.remain <= 7)
+
   return (
     <ul className="flex flex-col gap-[30px]">
-      {list.map((item) => (
+      {filteredList.map((item) => (
         <Item {...item} key={item.productId} />
       ))}
     </ul>

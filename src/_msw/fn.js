@@ -77,7 +77,7 @@ const DATA_LIST = [
   {
     productId: 7,
     category: '주방용품',
-    purchaseDate: '2023-05-07',
+    purchaseDate: '2023-05-19',
     regularDate: 5,
     regularCapacity: 5.3,
     name: '키친타월',
@@ -86,7 +86,7 @@ const DATA_LIST = [
   {
     productId: 8,
     category: '기타',
-    purchaseDate: '2023-05-08',
+    purchaseDate: '2023-05-20',
     regularDate: 5,
     regularCapacity: 5.3,
     name: '기타',
