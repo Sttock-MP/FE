@@ -42,7 +42,7 @@ function ProductModal({ onClose, id }) {
         <p className="text-2xl font-bold text-left text-darkBrown">상세보기</p>
         <div className="flex justify-between items-center px-[3rem]">
           <Icon SVG={SWITCH_ICON[category]} />
-          <span className="font-medium text-[14px] leading-5 font-[#665A48] w-[65px] truncate">
+          <span className="font-medium text-[20px] leading-5 font-[#665A48] w-[65px] truncate text-darkBrown">
             {name}
           </span>
           <div className="flex gap-[31px]">
@@ -50,20 +50,23 @@ function ProductModal({ onClose, id }) {
             <span>{remain}일 남음</span>
           </div>
         </div>
-        <div className="flex gap-[3rem] justify-center">
-          <p className="text-sm font-medium text-left text-darkBrown">제고정보</p>
-          <div className="flex flex-col gap-[1rem]">
+        <div className="flex gap-[8rem] ml-[10px] justify-center ">
+          <p className="text-[17px] font-medium text-left text-bold text-darkBrown mr-7">
+            재고정보
+          </p>
+          <div className="flex flex-col gap-[1.5rem] mr-4">
             <p className="text-sm font-medium text-left text-darkBrown">
-              전체 {Math.floor(regularCapacity)} 의 예상 소진일은 {remain} 일입니다.
+              {name}의 예상 소진일은 {remain} 일입니다.
             </p>
             <p className="text-sm font-medium text-left text-darkBrown">카테고리: {category}</p>
             <p className="text-sm font-medium text-left text-darkBrown">
-              구매일: {makeBuyDate(purchaseDate)} {usedDay}일 경과
+              구매일: {makeBuyDate(purchaseDate)}
+              <span className="text-red-400 "> {usedDay}일 경과 </span>
             </p>
-            <p className="text-sm font-medium text-left text-darkBrown">
+            {/* <p className="text-sm font-medium text-left text-darkBrown">
               계산기준:
               {SUB_CATEGORY_LIST.filter((el) => el.category.value === category)[0]?.standard?.value}
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="flex justify-center gap-[3rem]">

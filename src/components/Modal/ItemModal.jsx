@@ -110,7 +110,6 @@ function ItemModal({ onClose }) {
               )}
             </div>
           </div>
-
           <div className={wrapperStyle}>
             <p className="text-sm font-medium text-left text-darkBrown">구매량</p>
             <input
