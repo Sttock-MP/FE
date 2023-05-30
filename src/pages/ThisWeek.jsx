@@ -140,24 +140,25 @@ const Item = ({ productId, category, name, remain, usedPercent }) => {
     openItemModal(<ProductModal id={productId} />)
   }
   return (
-    <li
-      className={classNames(
-        'w-[960px] h-[100px]',
-        'flex justify-between items-center px-[53px] py-[20px]',
-        'bg-white border-[1px] border-solid border-[#F7F4EF]'
-      )}
-    >
-      <Icon SVG={SWITCH_ICON[category]} />
-      <span className="font-medium text-[14px] leading-5 font-[#665A48] w-[65px] truncate">
-        {name}
-        {name}
-      </span>
-      <div className="flex gap-[31px]">
-        <ProgressBar usedPercent={usedPercent} />
-        <span>{remain}일 남음</span>
-      </div>
-      <Detail onClick={handleClick} />
-    </li>
+    <>
+      <li
+        className={classNames(
+          'w-[960px] h-[100px]',
+          'flex justify-between items-center px-[53px] py-[20px]',
+          'bg-white border-[1px] border-solid border-[#F7F4EF]'
+        )}
+      >
+        <Icon SVG={SWITCH_ICON[category]} />
+        <span className="font-medium text-[14px] leading-5 font-[#665A48] w-[65px] truncate">
+          {name}
+        </span>
+        <div className="flex gap-[31px]">
+          <ProgressBar usedPercent={usedPercent} />
+          <span>{remain}일 남음</span>
+        </div>
+        <Detail onClick={handleClick} />
+      </li>
+    </>
   )
 }
 
@@ -179,7 +180,7 @@ export const ProgressBar = ({ usedPercent }) => {
     </div>
   )
 }
-const Detail = ({ onClick }) => {
+export const Detail = ({ onClick }) => {
   return (
     <div className="flex items-center gap-2 cursor-pointer" onClick={onClick}>
       <img src={Export} />

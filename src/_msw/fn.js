@@ -19,7 +19,7 @@ export const getMockProduct = (req, res, ctx) => {
 export const postMockProducts = (req, res, ctx) => {
   return res(ctx.status(200))
 }
-const DATA_LIST = [
+export const DATA_LIST = [
   {
     productId: 1,
     category: '생활용품',
@@ -68,7 +68,7 @@ const DATA_LIST = [
   {
     productId: 6,
     category: '구강용품/면도',
-    purchaseDate: '2023-05-06',
+    purchaseDate: '2023-05-22',
     regularDate: 5,
     regularCapacity: 5.3,
     name: '면도날',
@@ -77,7 +77,7 @@ const DATA_LIST = [
   {
     productId: 7,
     category: '주방용품',
-    purchaseDate: '2023-05-19',
+    purchaseDate: '2023-05-20',
     regularDate: 5,
     regularCapacity: 5.3,
     name: '키친타월',
