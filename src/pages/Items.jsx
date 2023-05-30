@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import DropDownIcon from '/src/asset/dropdown_icon.svg'
-import LifeItemIcon from '/src/asset/LifeItem.svg'
+import LifeItem from '/src/asset/LifeItem.svg'
 import HairItem from '/src/asset/HairItem.svg'
 import KitchenItem from '/src/asset/KitchenItem.svg'
 import BathItem from '/src/asset/BathItem.svg'
@@ -181,7 +181,7 @@ const Detail = ({ onClick }) => {
   )
 }
 export const SWITCH_ICON = {
-  생활용품: LifeItemIcon,
+  생활용품: LifeItem,
   욕실용품: BathItem,
   '헤어/바디': HairItem,
   스킨케어: SkinItem,

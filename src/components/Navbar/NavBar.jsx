@@ -50,7 +50,7 @@ const Middle = () => {
       </Link>
 
       <Link to="/items" className="whitespace-pre-wrap  hover:text-[#9F8772] hover:font-bold ">
-        항목 별 보기
+        항목별 보기
       </Link>
     </div>
   )
