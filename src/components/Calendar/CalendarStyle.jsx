@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
+const StyledContainer = styled.div``
+
 const StyledHeader = styled.div`
   display: flex;
-
-  margin: 20px;
+  width: 25%;
   margin-top: 30px;
   .thisMonth {
-    margin: 0 10px;
-    padding: 0 1px;
     font-weight: 700;
     color: #292929;
     line-height: 24px;
@@ -19,26 +18,22 @@ const StyledHeader = styled.div`
 `
 
 const StyledBody = styled.div`
+  flex-direction: column;
+  margin-top: 20px;
+
   text-align: center;
-  margin-top: 40px;
   .row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
     cursor: pointer;
     width: 500px;
-    height: 80px;
+    height: 90px;
   }
   .row.week {
-    height: 18px;
-    width: 500px;
     border-bottom: 1px solid #e8e8e8;
   }
   .box {
-    width: 40px;
-    height: 40px;
-    margin: 6px 6px;
     font-size: 14px;
   }
   .text {
@@ -91,4 +86,26 @@ const StyledBody = styled.div`
   }
 `
 
-export { StyledHeader, StyledBody }
+const StyledFeed = styled.div`
+  margin-top: 20px;
+  width: 90%;
+  height: 25%;
+  position: relative;
+  top: 0;
+  left: 60px;
+  text-align: left;
+  font-size: 12px;
+  color: #665a48;
+
+  padding: 10px;
+  span {
+  }
+  h2 {
+    font-size: 14px;
+  }
+`
+const StyledWrapper = styled.div`
+  display: flex;
+`
+
+export { StyledHeader, StyledBody, StyledFeed, StyledWrapper, StyledContainer }
