@@ -19,7 +19,7 @@ export const getMockProduct = (req, res, ctx) => {
 export const postMockProducts = (req, res, ctx) => {
   return res(ctx.status(200))
 }
-const DATA_LIST = [
+export const DATA_LIST = [
   {
     productId: 1,
     category: '생활용품',

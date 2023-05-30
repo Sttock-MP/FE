@@ -1,4 +1,3 @@
-import React from 'react'
 import Calenders from '../components/Calendar/CalendarModal'
 
 export default function Calender() {
@@ -26,9 +25,4 @@ const Title = () => {
       <div className="w-full h-[1px] border-[1px] border-[#E2DED8]" />
     </div>
   )
-}
-
-const Feed = () => {
-  // isSelected된 날짜가 enddate인 product들을 불러온다
-  
 }
