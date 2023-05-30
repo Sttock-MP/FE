@@ -1,10 +1,12 @@
-import { CalenderModal } from '../components/Calender/CalenderModal'
+import React from 'react'
+import Calenders from '../components/Calendar/CalenderModal'
 
 export default function Calender() {
   return (
     <div>
       캘린더 유아이 뜨는위치
-      <CalenderModal></CalenderModal>
+      <Calenders></Calenders>
     </div>
   )
 }
+
