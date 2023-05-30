@@ -30,7 +30,10 @@ export default function MainPage() {
         style={{ top: `${top > 330 ? 580 : 400}px`, transition: 'top 0.5s ease-in-out' }}
       >
         <div className="relative">
-          <button className="w-[120px] h-[50px] rounded-full bg-darkBrown text-white text-md">
+          <button
+            className="w-[120px] h-[50px] rounded-full bg-darkBrown text-white text-md shadow-lg  hover:bg-[#665A48] hover:shadow-xl hover:cursor-pointer hover:scale-110
+           "
+          >
             상품추가하기
           </button>
         </div>
