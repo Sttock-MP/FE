@@ -1,14 +1,22 @@
 import { useState } from 'react'
 import forward_icon from '/src/asset/arrow_forward_icon.svg'
 import backward_icon from '/src/asset/arrow_backward_icon.svg'
-import { StyledHeader, StyledBody } from './CalendarStyle'
+import {
+  StyledHeader,
+  StyledBody,
+  StyledFeed,
+  StyledWrapper,
+  StyledContainer,
+} from './CalendarStyle'
 
 import dayjs from 'dayjs'
 import weekday from 'dayjs/plugin/weekday'
 import isoWeek from 'dayjs/plugin/isoWeek'
 import weekOfYear from 'dayjs/plugin/weekOfYear'
 import { DATA_LIST } from '../../_msw/fn'
-import { makListByBuyList } from '../../pages/ThisWeek'
+import { Icon, Detail, SWITCH_ICON, makListByBuyList } from '../../pages/ThisWeek'
+import ProductModal from '../Modal/productModal'
+import useModal from '../../hooks/useModal'
 
 // day extend
 dayjs.extend(weekday)
@@ -20,6 +28,10 @@ const Calendar = () => {
   const [viewDate, setViewDate] = useState(dayjs())
   const [selectDate, setSelectDate] = useState(dayjs())
 
+  const { open: openItemModal } = useModal('productModal')
+  const handleClick = () => {
+    openItemModal(<ProductModal />)
+  }
   const calDates = DATA_LIST.map((el) => makListByBuyList(el)).map((el) => ({
     ...el,
     expiredDate: dayjs(today).add(el.remain, 'day').format('YYYY-MM-DD'),
@@ -27,7 +39,6 @@ const Calendar = () => {
   const matchedDates = calDates.filter((el) => {
     return el.expiredDate === selectDate.format('YYYY-MM-DD')
   })
-  console.log(matchedDates)
 
   const createCalendar = () => {
     const startWeek = viewDate.startOf('month').week()
@@ -67,7 +78,7 @@ const Calendar = () => {
                     >
                       <span className={`day`}>{current.format('D')}</span>
                       {isToday ? (
-                        <span className="isToday">오늘</span>
+                        <span className="isToday"></span>
                       ) : isSelected ? (
                         <span className="isSelected"></span>
                       ) : null}
@@ -95,71 +106,91 @@ const Calendar = () => {
 
   const renderProductDetails = () => {
     if (matchedDates.length > 0) {
-      const product = matchedDates[0] // 첫 번째 매칭된 상품 정보를 가져옴
       return (
-        <div>
-          <h4>Selected Product:</h4>
-          <p>Category: {product.category}</p>
-          <p>Name: {product.name}</p>
+        <div className="ml-3 m-9">
+          {matchedDates.map((product) => (
+            <div
+              key={product.id}
+              className="flex h-[100px] w-[380px] p-8 mb-6 items-center border border-gray shadow-sm rounded-md"
+            >
+              <Icon SVG={SWITCH_ICON[product.category]} />
+              <div className="flex flex-col">
+                <h2 className="mb-1 pl-7">{product.name}</h2>
+                <h3 className="mb-1 pl-7">{product.remain} ml / 개 남음</h3>
+              </div>
+              <div className="pl-12">
+                <Detail onClick={handleClick} />
+              </div>
+            </div>
+          ))}
         </div>
       )
     } else {
-      return null
+      return (
+        <div className="ml-3 m-9">
+          <div className="flex h-[100px] w-[380px] p-8 mb-6 items-center border border-gray shadow-sm rounded-md">
+            <div className="flex flex-col">
+              <h2 className="mb-1 pl-7">소진 예정인 상품이 없습니다.</h2>
+            </div>
+          </div>
+        </div>
+      )
     }
   }
 
   return (
     <>
-      <StyledHeader>
-        <button>
-          <img src={backward_icon} onClick={() => changegeMonth(viewDate, 'subtract')}></img>
-        </button>
-        <span className="thisMonth">{viewDate.format('MM')}월</span>
-        <button>
-          <img
-            src={forward_icon}
-            className="forward_icon"
-            onClick={() => changegeMonth(viewDate, 'add')}
-          ></img>
-        </button>
-      </StyledHeader>
-      <StyledBody>
-        <div className="row week">
-          <div className="box">
-            <span className="text">SUN</span>
-          </div>
-          <div className="box">
-            <span className="text">MON</span>
-          </div>
-          <div className="box">
-            <span className="text">TUE</span>
-          </div>
-          <div className="box">
-            <span className="text">WED</span>
-          </div>
-          <div className="box">
-            <span className="text">THU</span>
-          </div>
-          <div className="box">
-            <span className="text">FRI</span>
-          </div>
-          <div className="box">
-            <span className="text">SAT</span>
-          </div>
-        </div>
-        <div>{createCalendar()}</div>
-      </StyledBody>
-      <div className="w-[102.66px] h-[20.17px] absolute left-[883.65px] top-[310.04px] text-sm font-medium text-left text-[#665a48]">
-        <span>
-          오늘
-          {selectDate && matchedDates.length > 0 && (
-            <div>
-              <h2>Selected Date: {selectDate.format('YYYY-MM-DD')}</h2>
-              {renderProductDetails()}
+      <StyledContainer>
+        <StyledHeader>
+          <button>
+            <img src={backward_icon} onClick={() => changegeMonth(viewDate, 'subtract')}></img>
+          </button>
+          <span className="thisMonth">{viewDate.format('MM')}월</span>
+          <button>
+            <img
+              src={forward_icon}
+              className="forward_icon"
+              onClick={() => changegeMonth(viewDate, 'add')}
+            ></img>
+          </button>
+        </StyledHeader>
+        <StyledWrapper>
+          <StyledBody>
+            <div className="row week">
+              <div className="box">
+                <span className="text">SUN</span>
+              </div>
+              <div className="box">
+                <span className="text">MON</span>
+              </div>
+              <div className="box">
+                <span className="text">TUE</span>
+              </div>
+              <div className="box">
+                <span className="text">WED</span>
+              </div>
+              <div className="box">
+                <span className="text">THU</span>
+              </div>
+              <div className="box">
+                <span className="text">FRI</span>
+              </div>
+              <div className="box">
+                <span className="text">SAT</span>
+              </div>
             </div>
-          )}
-        </span>
-      </div>
+            <div>{createCalendar()}</div>
+          </StyledBody>
+
+          <StyledFeed>
+            <span className="m-3 text-sm font-medium text-left text-[#665a48]">오늘 소진</span>
+            <div className=" m-3 w-[380px] h-[1px] border-[1px] border-[#E2DED8]" />
+            <span>
+              {selectDate && matchedDates.length > 0 && <div>{renderProductDetails()}</div>}
+            </span>
+          </StyledFeed>
+        </StyledWrapper>
+      </StyledContainer>
     </>
   )
 }
