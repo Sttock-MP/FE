@@ -150,7 +150,6 @@ const Item = ({ productId, category, name, remain, usedPercent }) => {
       <Icon SVG={SWITCH_ICON[category]} />
       <span className="font-medium text-[14px] leading-5 font-[#665A48] w-[65px] truncate">
         {name}
-        {name}
       </span>
       <div className="flex gap-[31px]">
         <ProgressBar usedPercent={usedPercent} />
