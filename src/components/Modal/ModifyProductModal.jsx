@@ -135,7 +135,7 @@ function ModifyProductModal({ onClose, item }) {
             </div>
           </div>
           <div className={wrapperStyle}>
-            <p className="text-sm font-medium text-left text-darkBrown">예산소진일자</p>
+            <p className="text-sm font-medium text-left text-darkBrown">예상소진일자</p>
             <div className="w-[200px] h-7 bg-white border border-borderColor">
               <PurchaseDatePicker startDate={endDate} disabled={true} text="" />
             </div>
