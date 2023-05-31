@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Calenders from '../components/Calendar/CalendarModal'
 import FloatingInfo from '../components/Calendar/FloatingInfo'
-import infoIcon from '/Users/song-yeokyoung/Desktop/FE/src/asset/info_i_icon.svg'
+import infoIcon from '/src/asset/info_i_icon.svg'
 
 export default function Calender() {
   return (
