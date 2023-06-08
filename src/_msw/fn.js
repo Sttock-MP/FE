@@ -32,7 +32,7 @@ export const DATA_LIST = [
   {
     productId: 2,
     category: '욕실용품',
-    purchaseDate: '2023-05-02',
+    purchaseDate: '2023-05-30',
     regularDate: 5,
     regularCapacity: 5.3,
     name: '욕실세정제',
@@ -41,7 +41,7 @@ export const DATA_LIST = [
   {
     productId: 3,
     category: '헤어/바디',
-    purchaseDate: '2023-05-03',
+    purchaseDate: '2023-06-03',
     regularDate: 5,
     regularCapacity: 5.3,
     name: '샴푸',

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import DropDownIcon from '/src/asset/dropdown_icon.svg'
-import LifeItem from '/src/asset/LifeItem.svg'
+import LifeItem from '/src/asset/LifeItem1.svg'
 import HairItem from '/src/asset/HairItem.svg'
 import KitchenItem from '/src/asset/KitchenItem.svg'
 import BathItem from '/src/asset/BathItem.svg'
